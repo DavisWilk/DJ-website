@@ -1,88 +1,165 @@
-body{
+body {
     margin: 0;
-    height: 100vh;
-}
-
-.header{
-    width:100%;
-    text-align: center;
-    margin: 0em;
-    padding: 0 2rem;
-    height: 20%;
-    box-shadow: 2px 2px 5px grey;
-    display: flex;
-    font-size: 1.5rem;
-    align-items: center;
-    text-transform: uppercase;
-    justify-content: space-between;
-    background: white;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: url(../images/IGNISPHOTO1.jpg), linear-gradient(to bottom, black, darkblue, purple)repeat fixed;
+    background-blend-mode: color-dodge;
     background-size: cover;
-    background-blend-mode: multiply;
-    color: darkblue;
 }
 
-.nav{
+header {
     display: flex;
     justify-content: space-between;
-    margin-right: 3rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
 }
 
-.nav li{
+.fa {
+    color: honeydew;
+    font-size: 1.8rem;
+    margin-top: .3rem;
+    transition: color 500ms;
+    transition: transform 250ms ease-in-out;
+}
+
+.fa:hover {
+    color: palevioletred
+}
+
+.nav-open .fa {
+    transform: rotate(.625turn);
+}
+
+
+/* NAV BUTTON */
+.nav-button {
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+.nav-button:hover,
+.nav-button:active,
+.nav-button:focus {
+    cursor: pointer;
+    color: hotpink;
+    background: none;
+    border: none;
+}
+
+.nav-open .nav {
+    transform: translateX(75%);
+}
+
+.nav {
+    position: fixed;
+    background: transparent;
+    color: whitesmoke;
+    opacity: .8;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-open .nav {
+    transform: translateX(80%);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
     list-style-type: none;
     font-size: 1.2rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
 }
 
-.btn{
+.btn {
     text-decoration: none;
-    color: black;
+    color: white;
     width: 1rem;
-    margin:0 1rem;
+    margin: 0 1rem;
     transition: text-shadow 1000ms;
+    transition: color 500ms;
 }
 
-.btn:hover{
-    text-shadow:1px 1px 5px orange;
+.btn:hover {
+    text-shadow: 1px 1px 5px orange;
+    color: tomato;
 }
 
-.logoName{
+.logoName {
     text-shadow: 1px 1px 3px orange;
 }
 
-.soundcloud{
+.soundcloud {
+    display: none;
     margin: 1rem;
     box-shadow: 1px 1px 3px black;
 }
 
-.main-content{
+.main-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.bio-main{
+.bio-main {
     display: flex;
-    margin: 2rem 5rem;
+    color: white;
+    letter-spacing: 1px;
+    font-size: .9rem;
 }
 
 /* style */
 
-.bioPic{
+
+
+.bioPic {
     max-width: 300px;
+    height: auto;
     margin: 1rem;
     object-fit: cover;
 }
 
-.bioTitle{
+.bioTitle {
     font-family: 'Quicksand';
 }
 
-.altText{
+.altText {
     font-size: 1.5rem;
     color: darkgreen;
 }
 
-.logoName{
+.logoName {
     font-family: 'Quicksand';
-    margin-left: 2rem;
+    margin: 0;
 }
+
+.ticker-left {
+    list-style-type: none;
+}
+
+.marquee h3 {
+    text-align: center;
+}
+
+/* Media Queries */
